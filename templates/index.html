@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content animate-fade-up">
+                <span class="badge" style="background: var(--primary-light); color: var(--primary); padding: 0.5rem 1rem; border-radius: var(--radius-full); font-weight: 600; font-size: 0.85rem; display: inline-block; margin-bottom: 1rem;">
+                    <i class="fas fa-seedling"></i> Internship Initiative
+                </span>
+                <h1>Empowering Children Through <span class="text-highlight">Technology & Education</span></h1>
+                <p>Sparsh Setu is on a mission to bridge the digital divide. Through hands-on school visits, interactive workshops, and custom awareness drives, we bring foundational digital literacy to young minds.</p>
+                <div class="hero-actions">
+                    <a href="{{ url_for('volunteer') }}" class="btn btn-primary">
+                        <i class="fas fa-heart"></i> Join As Volunteer
+                    </a>
+                    <a href="{{ url_for('activities') }}" class="btn btn-outline">
+                        <i class="fas fa-compass"></i> Explore Activities
+                    </a>
+                </div>
+            </div>
+            <div class="hero-illustration animate-float">
+                <Image src="image_agent_tag_15394087302332005420" alt="School students learning digital literacy in a computer lab classroom" caption="Students engaged in hands-on computer basics learning during school visits." />
+            </div>
+        </div>
+    </div>
+    
+    <!-- SVG Wave Divider -->
+    <div class="svg-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+</section>
+
+<!-- Impact Statistics Section -->
+<section class="section stats-section">
+    <div class="container">
+        <div class="stats-grid reveal">
+            <div class="stat-card glass-card">
+                <div class="stat-icon"><i class="fas fa-school"></i></div>
+                <div class="stat-number counter-number" data-target="2">0</div>
+                <div class="stat-label">Partner Schools Visited</div>
+            </div>
+            <div class="stat-card glass-card">
+                <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+                <div class="stat-number counter-number" data-target="450">0</div>
+                <div class="stat-label">Students Empowered</div>
+            </div>
+            <div class="stat-card glass-card">
+                <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <div class="stat-number counter-number" data-target="25">0</div>
+                <div class="stat-label">Workshop Hours</div>
+            </div>
+            <div class="stat-card glass-card">
+                <div class="stat-icon"><i class="fas fa-hands-helping"></i></div>
+                <div class="stat-number counter-number" data-target="15">0</div>
+                <div class="stat-label">Active Volunteers</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="section">
+    <div class="container">
+        <div class="section-title reveal">
+            <span class="badge">Our Purpose</span>
+            <h2>Bridging the Digital Gap</h2>
+            <p>Every child deserves equal access to digital tools and safety awareness in today's interconnected world.</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="glass-card reveal reveal-delay-1">
+                <div class="feature-icon" style="background: var(--primary-light); color: var(--primary);">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>To eliminate digital illiteracy among underprivileged school children by providing direct, practical access to computer basics, keyboard literacy, software navigation, and internet safety education.</p>
+            </div>
+            <div class="glass-card reveal reveal-delay-2">
+                <div class="feature-icon" style="background: var(--secondary-light); color: var(--secondary);">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>A future where no student is left behind due to a lack of technology access, creating a tech-savvy generation confident in using digital tools for higher education and career development.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Activities Preview -->
+<section class="section" style="background: var(--bg-surface);">
+    <div class="container">
+        <div class="section-title reveal">
+            <span class="badge">What We Do</span>
+            <h2>Core Internship Highlights</h2>
+            <p>A brief look at the core activities executed during our internship program.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="feature-card reveal reveal-delay-1">
+                <div class="feature-icon"><i class="fas fa-desktop"></i></div>
+                <h3>Computer Basics</h3>
+                <p>Introducing hardware, operating system navigation, basic keyboard shortcuts, and simple document creation.</p>
+            </div>
+
+            <div class="feature-card reveal reveal-delay-2">
+                <div class="feature-icon" style="background: var(--secondary-light); color: var(--secondary);"><i class="fas fa-shield-alt"></i></div>
+                <h3>Cyber Safety</h3>
+                <p>Educating children on secure browsing practices, identifying phishing attempts, and maintaining password safety.</p>
+            </div>
+
+            <div class="feature-card reveal reveal-delay-3">
+                <div class="feature-icon" style="background: var(--accent-light); color: var(--accent);"><i class="fas fa-palette"></i></div>
+                <h3>Poster Campaign</h3>
+                <p>Designing and installing visual educational posters across school labs to reinforce key computing principles daily.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;" class="reveal">
+            <a href="{{ url_for('activities') }}" class="btn btn-primary">
+                View All Activities <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="section">
+    <div class="container">
+        <div class="section-title reveal">
+            <span class="badge">Feedback</span>
+            <h2>Words From Principals & Students</h2>
+            <p>Hear what our partner schools have to say about the Sparsh Setu sessions.</p>
+        </div>
+
+        <div class="testimonials-slider reveal">
+            <div class="testimonial-track" id="testimonial-track">
+                <div class="testimonial-slide">
+                    <p class="testimonial-quote">"The Sparsh Setu team made computers approachable for our middle school students. The interactive style kept every child engaged and curious."</p>
+                    <div class="testimonial-author">Mr. Rajesh Sharma</div>
+                    <div class="testimonial-role">Principal, Govt. Model Senior Secondary School</div>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-quote">"I learned how to type faster and use basic painting software for the first time! The volunteers were patient and encouraging."</p>
+                    <div class="testimonial-author">Priya Kumari</div>
+                    <div class="testimonial-role">Class 8 Student</div>
+                </div>
+            </div>
+
+            <div class="slider-controls">
+                <span class="slider-dot active" data-index="0"></span>
+                <span class="slider-dot" data-index="1"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Accordion -->
+<section class="section" style="background: var(--bg-surface);">
+    <div class="container">
+        <div class="section-title reveal">
+            <span class="badge">Got Questions?</span>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-accordion reveal">
+            <div class="faq-item active">
+                <div class="faq-header">
+                    <span>What is Sparsh Setu?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-content">
+                    <p>Sparsh Setu is a digital literacy initiative established as an internship drive to bring foundational computing knowledge and internet safety awareness to school students.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header">
+                    <span>How can I volunteer?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-content">
+                    <p>You can sign up directly via our Volunteer page form. We welcome college students, tech professionals, and educators to mentor upcoming drives.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-header">
+                    <span>Does the AI Chatbot require internet API tokens?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-content">
+                    <p>No, Sparsh Assist runs entirely on our self-contained Flask rule engine, delivering instant responses without third-party key requirements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call To Action -->
+<section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, #1D4ED8 100%); color: #FFFFFF; text-align: center;">
+    <div class="container reveal">
+        <h2 style="color: #FFFFFF; font-size: 2.5rem; margin-bottom: 1rem;">Ready to Make a Difference?</h2>
+        <p style="color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 2rem;">Join our volunteer team today and help us bring technology training to even more schools.</p>
+        <a href="{{ url_for('volunteer') }}" class="btn btn-secondary" style="font-size: 1.1rem; padding: 1rem 2.25rem;">
+            <i class="fas fa-hand-holding-heart"></i> Volunteer Now
+        </a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page Banner Header -->
+<section style="background: linear-gradient(135deg, var(--bg-surface) 0%, var(--primary-light) 100%); padding: 4rem 0 3rem; text-align: center; border-bottom: 1px solid var(--border-color);">
+    <div class="container reveal">
+        <span class="badge" style="background: var(--accent); color: #FFFFFF; padding: 0.4rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600;">
+            <i class="fas fa-envelope-open-text"></i> Reach Out To Us
+        </span>
+        <h1 style="font-size: 2.75rem; margin-top: 0.75rem; color: var(--text-dark);">Contact <span class="text-highlight">Sparsh Setu</span></h1>
+        <p style="max-width: 650px; margin: 0.5rem auto 0; color: var(--text-muted); font-size: 1.1rem;">
+            Have questions about our digital literacy programs, school partnerships, or volunteer sessions? Send us a message and we'll get back to you promptly.
+        </p>
+    </div>
+</section>
+
+<!-- Contact Details & Form Section -->
+<section class="section">
+    <div class="container">
+        <div class="grid-2" style="gap: 3rem; align-items: start;">
+            
+            <!-- Left Info Panel -->
+            <div class="reveal reveal-delay-1">
+                <span class="badge">Get in Touch</span>
+                <h2 style="font-size: 2.2rem; margin-top: 0.5rem; margin-bottom: 1.25rem;">We'd Love to Hear From You</h2>
+                <p style="margin-bottom: 2rem; line-height: 1.7; color: var(--text-muted);">
+                    Whether you are an educator looking to bring computer workshops to your school, a student interested in collaborating, or a corporate partner seeking CSR initiatives, our team is ready to connect.
+                </p>
+
+                <div class="glass-card" style="margin-bottom: 1.25rem;">
+                    <div style="display: flex; gap: 1.25rem; align-items: center;">
+                        <div class="feature-icon" style="margin-bottom: 0; background: var(--primary-light); color: var(--primary);">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem; font-size: 1rem;">Email Address</h4>
+                            <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;">{{ ngo_email }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="margin-bottom: 1.25rem;">
+                    <div style="display: flex; gap: 1.25rem; align-items: center;">
+                        <div class="feature-icon" style="margin-bottom: 0; background: var(--secondary-light); color: var(--secondary);">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem; font-size: 1rem;">Phone Number</h4>
+                            <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;">{{ ngo_phone }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="margin-bottom: 1.25rem;">
+                    <div style="display: flex; gap: 1.25rem; align-items: center;">
+                        <div class="feature-icon" style="margin-bottom: 0; background: var(--accent-light); color: var(--accent);">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem; font-size: 1rem;">Headquarters Location</h4>
+                            <p style="margin: 0; color: var(--text-muted); font-size: 0.95rem;">{{ ngo_address }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Contact Form -->
+            <div class="glass-card reveal reveal-delay-2">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.75rem;"><i class="fas fa-paper-plane" style="color: var(--primary); margin-right: 0.5rem;"></i> Send Message</h3>
+                
+                <form action="{{ url_for('contact') }}" method="POST" class="js-validate-form" novalidate>
+                    
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name <span style="color: #EF4444;">*</span></label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                        <div class="error-message">This field is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address <span style="color: #EF4444;">*</span></label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
+                        <div class="error-message">Please enter a valid email address.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject <span style="color: #EF4444;">*</span></label>
+                        <input type="text" id="subject" name="subject" class="form-control" placeholder="School Partnership Inquiry" required>
+                        <div class="error-message">This field is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message <span style="color: #EF4444;">*</span></label>
+                        <textarea id="message" name="message" class="form-control" rows="5" placeholder="Write your query or message here..." required></textarea>
+                        <div class="error-message">Please write a brief message.</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.05rem;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page Banner Header -->
+<section style="background: linear-gradient(135deg, var(--bg-surface) 0%, var(--primary-light) 100%); padding: 4rem 0 3rem; text-align: center; border-bottom: 1px solid var(--border-color);">
+    <div class="container reveal">
+        <span class="badge" style="background: var(--primary); color: #FFFFFF; padding: 0.4rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600;">
+            <i class="fas fa-images"></i> Visual Showcase
+        </span>
+        <h1 style="font-size: 2.75rem; margin-top: 0.75rem; color: var(--text-dark);">Our Media <span class="text-highlight">Gallery</span></h1>
+        <p style="max-width: 650px; margin: 0.5rem auto 0; color: var(--text-muted); font-size: 1.1rem;">
+            A collection of photos from our school visits, interactive classroom workshops, poster installations, and volunteer interactions.
+        </p>
+    </div>
+</section>
+
+<!-- Filterable Gallery Section -->
+<section class="section">
+    <div class="container">
+        <!-- Filter Controls -->
+        <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem;" class="reveal">
+            <button class="gallery-filter-btn active" data-filter="all">All Photos</button>
+            <button class="gallery-filter-btn" data-filter="school">School Visits</button>
+            <button class="gallery-filter-btn" data-filter="posters">Awareness Posters</button>
+            <button class="gallery-filter-btn" data-filter="workshops">Workshops</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid reveal">
+            
+            <div class="gallery-item" data-category="school">
+                <Image src="image_agent_tag_18018610253326242150" alt="Volunteers interacting with students during school visit" caption="Volunteers establishing rapport and guiding students in classroom setting." />
+                <div class="gallery-caption">Interactive School Visit & Introductory Session</div>
+            </div>
+
+            <div class="gallery-item" data-category="workshops">
+                <Image src="image_agent_tag_18018610253326243471" alt="Students practicing computer skills in school lab" caption="Hands-on computer training in progress during workshop session." />
+                <div class="gallery-caption">Practical Keyboard & Mouse Training Workshop</div>
+            </div>
+
+            <div class="gallery-item" data-category="posters">
+                <Image src="image_agent_tag_18018610253326244792" alt="Online cyber safety awareness poster design" caption="Educational cyber safety poster designed for classroom installation." />
+                <div class="gallery-caption">Cyber Safety Awareness Infographic Poster</div>
+            </div>
+
+            <div class="gallery-item" data-category="workshops">
+                <Image src="image_agent_tag_18018610253326243471" alt="Students engaged in learning computer basics" caption="Students acquiring computer literacy skills under volunteer supervision." />
+                <div class="gallery-caption">Operating Systems & Software Basics Session</div>
+            </div>
+
+            <div class="gallery-item" data-category="school">
+                <Image src="image_agent_tag_18018610253326242150" alt="Group photo with students and volunteers" caption="Volunteers and students celebrating a successful workshop completion." />
+                <div class="gallery-caption">School Outreach Team & Participating Students</div>
+            </div>
+
+            <div class="gallery-item" data-category="posters">
+                <Image src="image_agent_tag_18018610253326244792" alt="Classroom computer lab visual poster" caption="Permanent reference poster mounted inside school computer lab." />
+                <div class="gallery-caption">Lab Reference Chart Installation</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Simple Script for Dynamic Filtering -->
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            galleryItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    item.style.display = 'block';
+                    item.classList.add('animate-fade-in');
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
+{% endblock %}
+{% endblock %}

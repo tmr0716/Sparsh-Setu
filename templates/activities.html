@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page Banner Header -->
+<section style="background: linear-gradient(135deg, var(--bg-surface) 0%, var(--primary-light) 100%); padding: 4rem 0 3rem; text-align: center; border-bottom: 1px solid var(--border-color);">
+    <div class="container reveal">
+        <span class="badge" style="background: var(--primary); color: #FFFFFF; padding: 0.4rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600;">
+            <i class="fas fa-tasks"></i> What We Accomplished
+        </span>
+        <h1 style="font-size: 2.75rem; margin-top: 0.75rem; color: var(--text-dark);">Our Key <span class="text-highlight">Activities & Initiatives</span></h1>
+        <p style="max-width: 650px; margin: 0.5rem auto 0; color: var(--text-muted); font-size: 1.1rem;">
+            Detailed breakdown of our internship milestones across school visits, practical teaching, poster campaigns, and digital safety drives.
+        </p>
+    </div>
+</section>
+
+<!-- Detailed Activities Cards -->
+<section class="section">
+    <div class="container">
+        <div class="grid-3">
+            
+            <!-- Activity Card 1 -->
+            <div class="feature-card reveal reveal-delay-1" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; max-height: 200px;">
+                        <Image src="image_agent_tag_571575614225878273" alt="School students learning computer basics during Sparsh Setu school visit" caption="Practical computer lab training session in progress." />
+                    </div>
+                    <div class="feature-icon" style="margin-bottom: 1rem;"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Computer Basics Training</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+                        Hands-on instruction introducing primary computer hardware (mouse, keyboard, CPU), operating desktop environments, creating files, and basic word processing.
+                    </p>
+                </div>
+                <div>
+                    <span class="badge" style="background: var(--primary-light); color: var(--primary); font-size: 0.75rem;">School Drives</span>
+                </div>
+            </div>
+
+            <!-- Activity Card 2 -->
+            <div class="feature-card reveal reveal-delay-2" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; max-height: 200px;">
+                        <Image src="image_agent_tag_571575614225878198" alt="Cyber safety and digital awareness poster designed by Sparsh Setu" caption="Custom awareness poster created for classroom installation." />
+                    </div>
+                    <div class="feature-icon" style="background: var(--accent-light); color: var(--accent); margin-bottom: 1rem;"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Awareness Poster Campaign</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+                        Custom-designed visual learning aids, infograph posters, and keyboard shortcut charts printed and permanently displayed inside partner computer labs.
+                    </p>
+                </div>
+                <div>
+                    <span class="badge" style="background: var(--accent-light); color: var(--accent); font-size: 0.75rem;">Visual Design</span>
+                </div>
+            </div>
+
+            <!-- Activity Card 3 -->
+            <div class="feature-card reveal reveal-delay-3" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.25rem; max-height: 200px; background: var(--secondary-light); display: flex; align-items: center; justify-content: center; height: 160px;">
+                        <i class="fas fa-shield-halved" style="font-size: 4rem; color: var(--secondary);"></i>
+                    </div>
+                    <div class="feature-icon" style="background: var(--secondary-light); color: var(--secondary); margin-bottom: 1rem;"><i class="fas fa-user-shield"></i></div>
+                    <h3>Digital Safety Workshops</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+                        Interactive sessions teaching students safe web browsing, avoiding online fraud, protecting personal identity, and practicing positive internet etiquette.
+                    </p>
+                </div>
+                <div>
+                    <span class="badge" style="background: var(--secondary-light); color: var(--secondary); font-size: 0.75rem;">Cyber Awareness</span>
+                </div>
+            </div>
+
+            <!-- Activity Card 4 -->
+            <div class="feature-card reveal reveal-delay-1" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div class="feature-icon" style="margin-bottom: 1rem;"><i class="fas fa-school"></i></div>
+                    <h3>Two-School Outreach Drive</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+                        Targeted educational visits across two government-aided schools, impacting over 450+ students with zero prior structured computing experience.
+                    </p>
+                </div>
+                <div>
+                    <span class="badge" style="background: var(--primary-light); color: var(--primary); font-size: 0.75rem;">Fieldwork</span>
+                </div>
+            </div>
+
+            <!-- Activity Card 5 -->
+            <div class="feature-card reveal reveal-delay-2" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div class="feature-icon" style="background: var(--secondary-light); color: var(--secondary); margin-bottom: 1rem;"><i class="fas fa-robot"></i></div>
+                    <h3>AI Assistant Deployment</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+                        Built and integrated "Sparsh Assist", an instant intelligent rule-based chatbot designed to guide students and volunteers about project resources.
+                    </p>
+                </div>
+                <div>
+                    <span class="badge" style="background: var(--secondary-light); color: var(--secondary); font-size: 0.75rem;">Software Dev</span>
+                </div>
+            </div>
+
+            <!-- Activity Card 6 -->
+            <div class="feature-card reveal reveal-delay-3" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div class="feature-icon" style="background: var(--accent-light); color: var(--accent); margin-bottom: 1rem;"><i class="fas fa-hands-helping"></i></div>
+                    <h3>Peer Mentorship Program</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1rem;">
+                        Establishing student leaders within each class to assist peers during lab sessions, ensuring long-term knowledge retention and sustainability.
+                    </p>
+                </div>
+                <div>
+                    <span class="badge" style="background: var(--accent-light); color: var(--accent); font-size: 0.75rem;">Leadership</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section" style="background: var(--bg-surface); text-align: center;">
+    <div class="container reveal">
+        <h2>Want to Host an Activity Session at Your School?</h2>
+        <p style="max-width: 600px; margin: 0.5rem auto 1.5rem;">Reach out to our team to request a school visit or collaborate on upcoming technology campaigns.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-primary">
+            <i class="fas fa-envelope"></i> Contact Us Today
+        </a>
+    </div>
+</section>
+{% endblock %}

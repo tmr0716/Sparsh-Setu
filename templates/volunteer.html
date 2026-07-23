@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page Banner Header -->
+<section style="background: linear-gradient(135deg, var(--bg-surface) 0%, var(--primary-light) 100%); padding: 4rem 0 3rem; text-align: center; border-bottom: 1px solid var(--border-color);">
+    <div class="container reveal">
+        <span class="badge" style="background: var(--secondary); color: #FFFFFF; padding: 0.4rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600;">
+            <i class="fas fa-hand-holding-heart"></i> Join Our Community
+        </span>
+        <h1 style="font-size: 2.75rem; margin-top: 0.75rem; color: var(--text-dark);">Become a <span class="text-highlight">Volunteer</span></h1>
+        <p style="max-width: 650px; margin: 0.5rem auto 0; color: var(--text-muted); font-size: 1.1rem;">
+            Share your knowledge, inspire young minds, and help us bridge the digital divide. Join Sparsh Setu for our next school outreach drive!
+        </p>
+    </div>
+</section>
+
+<!-- Volunteer Content & Form Section -->
+<section class="section">
+    <div class="container">
+        <div class="grid-2" style="gap: 3rem; align-items: start;">
+            
+            <!-- Left Info Panel -->
+            <div class="reveal reveal-delay-1">
+                <span class="badge">Why Volunteer?</span>
+                <h2 style="font-size: 2.2rem; margin-top: 0.5rem; margin-bottom: 1.25rem;">Make a Lasting Impact in Children's Lives</h2>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7; color: var(--text-muted);">
+                    By joining Sparsh Setu as a volunteer, you become an active agent of social change. You'll work directly with young school children who are eager to learn and explore the world of computers.
+                </p>
+
+                <div class="glass-card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <i class="fas fa-graduation-cap" style="font-size: 1.75rem; color: var(--primary);"></i>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Certificate of Appreciation</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Receive an official internship & community participation certificate upon drive completion.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="margin-bottom: 1.5rem; border-left: 4px solid var(--secondary);">
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <i class="fas fa-users-viewfinder" style="font-size: 1.75rem; color: var(--secondary);"></i>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Leadership & Mentorship Skills</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Enhance your communication, public speaking, and leadership capabilities through classroom teaching.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card" style="border-left: 4px solid var(--accent);">
+                    <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                        <i class="fas fa-clock" style="font-size: 1.75rem; color: var(--accent);"></i>
+                        <div>
+                            <h4 style="margin-bottom: 0.25rem;">Flexible Volunteering</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">We organize weekend and short school drives designed to fit into your academic schedule.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Registration Form -->
+            <div class="glass-card reveal reveal-delay-2">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.75rem;"><i class="fas fa-user-plus" style="color: var(--primary); margin-right: 0.5rem;"></i> Volunteer Registration</h3>
+                
+                <form action="{{ url_for('volunteer') }}" method="POST" class="js-validate-form" novalidate>
+                    
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name <span style="color: #EF4444;">*</span></label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                        <div class="error-message">This field is required.</div>
+                    </div>
+
+                    <div class="grid-2" style="gap: 1rem; margin-bottom: 0;">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address <span style="color: #EF4444;">*</span></label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+                            <div class="error-message">Please enter a valid email address.</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number <span style="color: #EF4444;">*</span></label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 98765 43210" required>
+                            <div class="error-message">This field is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="gap: 1rem; margin-bottom: 0;">
+                        <div class="form-group">
+                            <label for="age" class="form-label">Age</label>
+                            <input type="number" id="age" name="age" class="form-control" placeholder="21" min="15" max="80">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="occupation" class="form-label">Occupation</label>
+                            <input type="text" id="occupation" name="occupation" class="form-control" placeholder="College Student / Engineer">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Why do you want to join Sparsh Setu?</label>
+                        <textarea id="message" name="message" class="form-control" rows="4" placeholder="Tell us briefly about your motivation or prior teaching experience..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.05rem;">
+                        <i class="fas fa-paper-plane"></i> Submit Application
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ tagline }} - Sparsh Setu Internship Initiative">
+    <meta name="theme-color" content="#2563EB">
+    
+    <title>{% if page_title %}{{ page_title }} | {% endif %}{{ app_name }}</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS Suite -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container">
+            <a href="{{ url_for('home') }}" class="nav-brand">
+                <i class="fas fa-hands-holding-child"></i>
+                <span>{{ app_name }}</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link {% if request.endpoint == 'about' %}active{% endif %}">About Us</a>
+                <a href="{{ url_for('activities') }}" class="nav-link {% if request.endpoint == 'activities' %}active{% endif %}">Activities</a>
+                <a href="{{ url_for('gallery') }}" class="nav-link {% if request.endpoint == 'gallery' %}active{% endif %}">Gallery</a>
+                <a href="{{ url_for('volunteer') }}" class="nav-link {% if request.endpoint == 'volunteer' %}active{% endif %}">Volunteer</a>
+                <a href="{{ url_for('contact') }}" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">Contact</a>
+                <a href="{{ url_for('chatbot_page') }}" class="btn btn-secondary btn-sm" style="padding: 0.5rem 1.25rem;">
+                    <i class="fas fa-robot"></i> Sparsh Assist
+                </a>
+            </nav>
+
+            <div class="nav-controls">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="mobile-nav-toggle" id="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Flask Flash Messages Container -->
+    <div class="container" style="margin-top: 1rem;">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="toast {{ category }}" style="position: static; margin-bottom: 1rem; animation: fadeIn 0.4s ease;">
+                        <i class="fas {% if category == 'success' %}fa-check-circle{% else %}fa-exclamation-triangle{% endif %}"></i>
+                        <span>{{ message }}</span>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <!-- Main Page Body -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="{{ url_for('home') }}" class="nav-brand" style="color: var(--primary);">
+                        <i class="fas fa-hands-holding-child"></i> Sparsh Setu
+                    </a>
+                    <p>{{ tagline }}</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('activities') }}">Our Activities</a></li>
+                        <li><a href="{{ url_for('gallery') }}">Media Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Get Involved</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ url_for('volunteer') }}">Become a Volunteer</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                        <li><a href="{{ url_for('chatbot_page') }}">AI Chatbot Assist</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Contact Information</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-envelope" style="color: var(--primary);"></i> {{ ngo_email }}
+                    </p>
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">
+                        <i class="fas fa-phone" style="color: var(--secondary);"></i> {{ ngo_phone }}
+                    </p>
+                    <p style="font-size: 0.9rem;">
+                        <i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> {{ ngo_address }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Sparsh Setu NGO. Internship Presentation Project. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back To Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Core Scripts -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
