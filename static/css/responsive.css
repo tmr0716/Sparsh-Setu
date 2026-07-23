@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Sparsh Setu - Responsive Media Queries & Device Adaptation
+   ========================================================================== */
+
+/* --- Tablet & Medium Screens (Max-width: 1024px) --- */
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* --- Mobile Landscape & Small Tablets (Max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  :root {
+    --header-height: 70px;
+  }
+
+  /* Navigation Drawer Setup */
+  .mobile-nav-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background: var(--bg-surface);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: left var(--transition-normal);
+    box-shadow: var(--shadow-xl);
+    border-top: 1px solid var(--border-color);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+  }
+
+  .grid-3,
+  .grid-2,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer-brand p,
+  .social-links {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .toast-container {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .toast {
+    width: 100%;
+  }
+}
+
+/* --- Small Mobile Devices (Max-width: 480px) --- */
+@media screen and (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .glass-card,
+  .feature-card {
+    padding: 1.5rem;
+  }
+}
+
+/* --- Landscape Orientation Adjustments for Mobile --- */
+@media screen and (max-height: 550px) and (orientation: landscape) {
+  .nav-menu {
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    padding: 2rem 0;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+}
