@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page Banner Header -->
+<section style="background: linear-gradient(135deg, var(--bg-surface) 0%, var(--primary-light) 100%); padding: 4rem 0 3rem; text-align: center; border-bottom: 1px solid var(--border-color);">
+    <div class="container reveal">
+        <span class="badge" style="background: var(--primary); color: #FFFFFF; padding: 0.4rem 1rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 600;">
+            <i class="fas fa-info-circle"></i> Discover Our Story
+        </span>
+        <h1 style="font-size: 2.75rem; margin-top: 0.75rem; color: var(--text-heading);">About <span class="text-highlight">Sparsh Setu</span></h1>
+        <p style="max-width: 650px; margin: 0.5rem auto 0; color: var(--text-muted); font-size: 1.1rem;">
+            Connecting hearts and technology through impactful community outreach, student mentorship, and digital empowerment.
+        </p>
+    </div>
+</section>
+
+<!-- About Overview Section -->
+<section class="section">
+    <div class="container">
+        <div class="grid-2" style="align-items: center;">
+            <div class="reveal reveal-delay-1">
+                <span class="badge">Who We Are</span>
+                <h2 style="font-size: 2.2rem; margin-top: 0.5rem; margin-bottom: 1.25rem;">A Student-Driven Digital Inclusion Movement</h2>
+                <p style="margin-bottom: 1rem; line-height: 1.7;">
+                    <strong>Sparsh Setu</strong> (meaning <em>"The Touch of Connection"</em>) was established as an internship initiative dedicated to bridging the digital divide in underserved communities.
+                </p>
+                <p style="margin-bottom: 1.5rem; line-height: 1.7; color: var(--text-muted);">
+                    Many young students in government and local schools lack access to foundational computer education. Our team organizes hands-on workshops, installs educational reference materials, and mentors children on digital navigation, online safety, and modern tools.
+                </p>
+
+                <div class="grid-2" style="gap: 1rem; margin-top: 1.5rem;">
+                    <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.25rem; margin-top: 0.2rem;"></i>
+                        <div>
+                            <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Hands-on Training</h4>
+                            <p style="font-size: 0.875rem; color: var(--text-muted);">Direct experience on desktop systems and software basics.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                        <i class="fas fa-check-circle" style="color: var(--secondary); font-size: 1.25rem; margin-top: 0.2rem;"></i>
+                        <div>
+                            <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Cyber Awareness</h4>
+                            <p style="font-size: 0.875rem; color: var(--text-muted);">Teaching young minds safe and responsible web navigation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal reveal-delay-2" style="text-align: center;">
+                <Image src="image_agent_tag_9959241832739439193" alt="Volunteers conducting interactive digital literacy workshop in classroom" caption="Volunteers providing one-on-one technology mentorship during a school visit." />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Timeline / Milestone Journey -->
+<section class="section" style="background: var(--bg-surface);">
+    <div class="container">
+        <div class="section-title reveal">
+            <span class="badge">Milestones</span>
+            <h2>Our Internship Journey</h2>
+            <p>Chronological highlights of how our project unfolded from inception to community execution.</p>
+        </div>
+
+        <Timeline>
+        {/* Reason: Tracks the sequential progression and key operational milestones of the internship drive. */}
+            <TimelineEvent title="Project Planning & Curriculum Design" time="Week 1">
+                Formulated learning modules covering basic computer components, typing practice, operating system navigation, and safe browsing protocols.
+            </TimelineEvent>
+            <TimelineEvent title="School Partnership & Field Outreach" time="Week 2">
+                Coordinated with local school administrations to set up classroom schedules, set up computer labs, and assess student baseline skill levels.
+            </TimelineEvent>
+            <TimelineEvent title="Workshop Execution & Poster Drive" time="Week 3">
+                Conducted interactive learning sessions for 450+ students across partner schools and installed educational posters in computer labs.
+            </TimelineEvent>
+            <TimelineEvent title="Impact Assessment & Platform Rollout" time="Week 4">
+                Gathered feedback from school faculty, evaluated student progress, and launched the full Sparsh Setu digital platform and AI assistant.
+            </TimelineEvent>
+        </Timeline>
+    </div>
+</section>
+
+<!-- Our Core Values -->
+<section class="section">
+    <div class="container">
+        <div class="section-title reveal">
+            <span class="badge">Principles</span>
+            <h2>Our Core Values</h2>
+        </div>
+
+        <div class="grid-3">
+            <div class="feature-card reveal reveal-delay-1" style="text-align: center;">
+                <div class="feature-icon" style="margin: 0 auto 1.5rem;"><i class="fas fa-heart"></i></div>
+                <h3>Empathy & Care</h3>
+                <p>We approach every student with patience, understanding that digital concepts can feel intimidating at first exposure.</p>
+            </div>
+
+            <div class="feature-card reveal reveal-delay-2" style="text-align: center;">
+                <div class="feature-icon" style="background: var(--secondary-light); color: var(--secondary); margin: 0 auto 1.5rem;"><i class="fas fa-lightbulb"></i></div>
+                <h3>Practical Innovation</h3>
+                <p>We focus on real-world utility—teaching skills that immediately boost confidence and support academic progress.</p>
+            </div>
+
+            <div class="feature-card reveal reveal-delay-3" style="text-align: center;">
+                <div class="feature-icon" style="background: var(--accent-light); color: var(--accent); margin: 0 auto 1.5rem;"><i class="fas fa-users"></i></div>
+                <h3>Inclusivity</h3>
+                <p>Ensuring every child, regardless of socioeconomic background, gets equal access to learning opportunities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
