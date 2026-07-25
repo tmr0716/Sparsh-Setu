@@ -34,9 +34,10 @@
     <header class="navbar">
         <div class="container">
             <a href="{{ url_for('home') }}" class="nav-brand">
-                <i class="fas fa-hands-holding-child"></i>
-                <span>{{ app_name }}</span>
-            </a>
+    <img src="https://donateoldthings.org/assets/img/sparsh_setu_logo.png"
+         alt="Sparsh Setu Logo"
+         style="height:60px; width:auto;">
+</a>
 
             <nav class="nav-menu" id="nav-menu">
                 <a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">Home</a>
